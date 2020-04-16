@@ -14,7 +14,7 @@ using namespace std;
 
 GLdouble eyeX = 0;
 GLdouble eyeY = 0;
-GLdouble eyeZ = 3;
+GLdouble eyeZ = 4;
 
 GLdouble centerX = 0;
 GLdouble centerY = 0;
@@ -84,11 +84,11 @@ void ChangeViewPort(int width, int height)
 
 	if (width < height && width > 0)
 	{
-		glFrustum(-10.0, 10.0, -10.0 * height / width, 10.0 * height / width, 1.0, 20.0);
+		glFrustum(-5.0, 5.0, -5.0 * height / width, 5.0 * height / width, 1.0, 20.0);
 	}
 	else if (width >= height && height > 0)
 	{
-		glFrustum(-10.0 * width / height, 10.0 * width / height, -10.0, 10.0, 1.0, 20.0);
+		glFrustum(-5.0 * width / height, 5.0 * width / height, -5.0, 5.0, 1.0, 20.0);
 	}
 }
 
@@ -180,3 +180,27 @@ int main(int argc, char* argv[])
 	
 	return 0;
 }
+
+// Zawartoœæ pliku edges.txt
+//8
+//0 8 0 - 2 2 2
+//0 8 0 - 2 2 - 2
+//0 8 0     2 2 - 2
+//0 8 0     2 2 2
+//- 2 2 2 - 2 2 - 2
+//- 2 2 - 2   2 2 - 2
+//2 2 - 2    2 2 2
+//2 2 2 - 2 2 2
+//12
+//- 2 2 2 - 2 2 - 2
+//- 2 2 - 2   2 2 - 2
+//2 2 - 2    2 2 2
+//2 2 2 - 2 2 2
+//- 2 2 2 - 2 - 2 2
+//2 2 2     2 - 2 2
+//2 2 - 2    2 - 2 - 2
+//- 2 2 - 2 - 2 - 2 - 2
+//- 2 - 2 2 - 2 - 2 - 2
+//- 2 - 2 - 2  2 - 2 - 2
+//2 - 2 - 2   2 - 2 2
+//2 - 2 2 - 2 - 2 2
